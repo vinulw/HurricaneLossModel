@@ -1,7 +1,7 @@
 import argparse
 
 
-def parse_args():
+def create_parser():
     """
     Function to parse command line arguments.
     """
@@ -37,11 +37,11 @@ def parse_args():
                         help="""Number of samples (simulation years) to run
                         (default 1000).""")
 
-    return parser.parse_args()
+    return parser
 
 
 def main():
     """
     Main function for CLI. It parses arguments and runs the model.
     """
-    args = parse_args()
+    args = create_parser().parse_args()
