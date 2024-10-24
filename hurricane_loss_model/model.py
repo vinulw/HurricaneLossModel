@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.random import poisson, lognormal
-from collections.abc import Iterable
+from typing import List
 
 
 class LocationProfile():
@@ -34,8 +34,8 @@ class GenerateLossCalculation():
         return np.sum(loss_per_event)
 
 
-def runLossCalculations(locations: Iterable[LocationProfile],
-                        n_samples: int) -> float:
+def run_loss_calculations(locations: List[LocationProfile],
+                          n_samples: int) -> float:
     """
     Calculate the average annual loss in $Billions for a list of locations.
     """
