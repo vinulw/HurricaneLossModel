@@ -15,7 +15,7 @@ pip install .
 
 I recommend using a virtual environment to install this package to avoid
 dependency conflicts. For the recommended installation route follow the
-[Development Installation](###Development Installation)
+[Development Installation](###development-installation).
 
 ### Development Installation
 
