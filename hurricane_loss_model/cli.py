@@ -47,6 +47,16 @@ def validate_arguments(args):
     '''
     Validate parsed arguments for model specific use. Throws exception if
     validation fails.
+
+    Parameters
+    ----------
+    args: NameSpace
+        The output of the argument parser.
+
+    Raises
+    ------
+    ValueError
+        If any of the validations on the arguments fail.
     '''
     # Number of samples positive
     if (args.num_monte_carlo_samples is not None and
@@ -57,14 +67,14 @@ def validate_arguments(args):
 
     # Landfall rates positive
     if (args.florida_landfall_rate < 0 or args.gulf_landfall_rate < 0):
-        logging.error(f"InputError: Landfall rate.")
+        logging.error("InputError: Landfall rate.")
         logging.error(f"\tflorida_landfall_rate: {args.florida_landfall_rate}")
         logging.error(f"\tgulf_landfall_rate: {args.gulf_landfall_rate}")
         raise ValueError("Landfall rate cannot be negative")
 
     # Standard deviation positive
     if (args.florida_stddev < 0 or args.gulf_stddev < 0):
-        logging.error(f"InputError: Standard deviation.")
+        logging.error("InputError: Standard deviation.")
         logging.error(f"\tflorida_stddev: {args.florida_stddev}")
         logging.error(f"\tgulf_stddev: {args.gulf_stddev}")
         raise ValueError("Standard deviation cannot be negative")
