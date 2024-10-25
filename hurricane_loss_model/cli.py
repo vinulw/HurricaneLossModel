@@ -13,7 +13,7 @@ def create_parser():
         prog='gethurricaneloss',
         description="""
             Calculates the average annual hurricane loss in $Billions for
-            a simple hurricane model.
+            a simple hurricane model in Florida and the Gulf states.
             """
     )
 
