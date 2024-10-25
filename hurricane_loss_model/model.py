@@ -83,4 +83,4 @@ def run_loss_calculations(locations: List[LocationProfile],
         logging.info(f'Calculated loss for location {i}/{len(locations)}')
         total_losses += lossCalculation.run()
 
-    return total_losses / n_samples
+    return total_losses / n_samples # mean loss

@@ -31,6 +31,7 @@ from the root of the project.
 Poetry sets up a separate virtual environment to set up the project and the
 command line utility. The easiest way to interact with the utility is to open up
 a shell in the virtual environment by running `poetry shell` in this package.
+
 The command line utility can then be used as follows:
 
 ```
@@ -49,3 +50,23 @@ The command line arguments are defined as below:
 The optional parameters are:
 
 * `-n`, `--num_monte_carlo`- Number of samples (simulation years) to run (default 1000).
+
+## Code Efficiency
+
+To test the efficency of this code we run an experiment running the CLI for
+different values of `num_monte_carlo` with the same input. The script for
+collecting this data and plotting can be found in `scripts/efficency.py`.
+
+Looking at the mean time per run (averaged over 10 runs) produces the following
+result:
+
+![Time vs samples figure](assets/time_vs_samples.png)
+
+Note the error bars correspond to 1 standard deviation. The code is able to run
+with $10^7$ samples in under 5 seconds.
+
+This number of samples is enough for the Monte Carlo simulation to stabilise.
+Plotting the standard deviation of the output below, we see the mean loss
+stabilises around $10^5$ samples for this input.
+
+![Mean loss vs samples figure](assets/mean_loss_vs_samples.png)
